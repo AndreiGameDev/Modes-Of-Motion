@@ -19,7 +19,7 @@ public class Easing {
         public static float Out(float t) {
             return MathF.Sin(t * (MathF.PI / 2f));
         }
-        public static float EaseInOut(float t) {
+        public static float InOut(float t) {
             return -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
         }
     }
@@ -203,7 +203,7 @@ public class Easing {
                 return n1 * (t -= 2.625f / d1) * t + 0.984375f;
             }
         }
-        public float InOut(float t) {
+        public static float InOut(float t) {
             if(t < 0.5f) {
                 return (1 - Out(1 - 2 * t)) / 2;
             } else{

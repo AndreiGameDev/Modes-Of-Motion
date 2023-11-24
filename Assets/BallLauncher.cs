@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonLauncher : MonoBehaviour {
+public class BallLauncher : MonoBehaviour {
+    LineRenderer lineRenderer;
     public float launchVelocity = 10f;
     public float launchAngle = 30f;
     public float gravity = -9.81f;
@@ -27,13 +28,14 @@ public class CannonLauncher : MonoBehaviour {
             pathPoints.Add(drawPoint);
         }
     }
-
+    
     void DrawPath() {
         for(int i=0; i< pathPoints.Count-1; i++) {
             Debug.DrawLine(pathPoints[i], pathPoints[i+1], Color.green);
         }
     }
     void Start () {
+        lineRenderer = GetComponent<LineRenderer>();
         //initualise path vector for drawing
         pathPoints = new List<Vector3>();
         CalculateProjectile();
@@ -73,6 +75,8 @@ public class CannonLauncher : MonoBehaviour {
             CalculateProjectile();
             CalculatePath();
         }
+        lineRenderer.positionCount = pathPoints.Count;
+        lineRenderer.SetPositions(pathPoints.ToArray());
         DrawPath();
         if ((Input.GetKeyDown(KeyCode.Space) && !simulate)) {
             simulate = true;
