@@ -173,7 +173,6 @@ public class CustomLerpLibrary : MonoBehaviour {
         if(canChangeSize) {
             transform.localScale = lerpScale;
         }
-        text.text = "Progress: " + Mathf.Round(progressText * 100) + "%";
     }
 }
 public enum EasingFunction{
