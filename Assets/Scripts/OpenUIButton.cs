@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,15 @@ using UnityEngine;
 public class OpenUIButton : MonoBehaviour, IInteract
 {
     [SerializeField] GameObject CanvasToOpen;
+    FirstPersonController fpsController;
 
+    private void Start() {
+        fpsController = FindObjectOfType<FirstPersonController>();
+    }
     public void Interact() {
+        fpsController.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         if (CanvasToOpen != null) {
             CanvasToOpen.SetActive(true);
         }

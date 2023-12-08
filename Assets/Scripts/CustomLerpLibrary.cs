@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 public class CustomLerpLibrary : MonoBehaviour {
-    bool lerping;   
+    [SerializeField]bool lerping;   
     //InitializingVariables
     Vector3 lerpPos;
     Vector3 lerpRotation;
@@ -160,18 +160,6 @@ public class CustomLerpLibrary : MonoBehaviour {
     public void LerpButton() {
         if(lerping == false) {
             StartCoroutine(Lerp());
-        }
-    }
-
-    private void Update() {
-        if(canChangePosition) {
-            transform.position = lerpPos;
-        }
-        if(canChangeRotation) {
-            transform.eulerAngles = lerpRotation;
-        }
-        if(canChangeSize) {
-            transform.localScale = lerpScale;
         }
     }
 }
