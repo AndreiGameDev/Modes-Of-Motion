@@ -4,36 +4,36 @@ using UnityEngine;
 
 public class LerpEasingOptions : MonoBehaviour
 {
-    CustomLerpLibrary lerpLibrary;
-    private void Start() {
-        lerpLibrary = GetComponent<CustomLerpLibrary>();
-    }
-    public void SetEasingOptionSine() {
-        lerpLibrary.easeFunction = EasingFunction.Sines;
-    }
+    //AdvancedLerpLibrary lerpLibrary;
+    //private void Start() {
+    //    lerpLibrary = GetComponent<AdvancedLerpLibrary>();
+    //}
+    //public void SetEasingOptionSine() {
+    //    lerpLibrary.easeFunction = EasingType.Sines;
+    //}
 
-    public void SetEasingOptionCubic() {
-        lerpLibrary.easeFunction = EasingFunction.Cubic;
-    }
-    public void SetEasingOptionQuint() {
-        lerpLibrary.easeFunction = EasingFunction.Quint;
-    }
-    public void SetEasingOptionElastic() {
-        lerpLibrary.easeFunction = EasingFunction.Elastic;
-    }
-    public void SetEasingOptionQuadratic() {
-        lerpLibrary.easeFunction = EasingFunction.Quadratic;
-    }
-    public void SetEasingOptionQuart() {
-        lerpLibrary.easeFunction = EasingFunction.Quart;
-    }
-    public void SetEasingOptionExpo() {
-        lerpLibrary.easeFunction = EasingFunction.Expo;
-    }
-    public void SetEasingOptionBack() {
-        lerpLibrary.easeFunction = EasingFunction.Back;
-    }
-    public void SetEasingOptionBounce() {
-        lerpLibrary.easeFunction = EasingFunction.Bounce;
-    }
+    //public void SetEasingOptionCubic() {
+    //    lerpLibrary.easeFunction = EasingType.Cubic;
+    //}
+    //public void SetEasingOptionQuint() {
+    //    lerpLibrary.easeFunction = EasingType.Quint;
+    //}
+    //public void SetEasingOptionElastic() {
+    //    lerpLibrary.easeFunction = EasingType.Elastic;
+    //}
+    //public void SetEasingOptionQuadratic() {
+    //    lerpLibrary.easeFunction = EasingType.Quadratic;
+    //}
+    //public void SetEasingOptionQuart() {
+    //    lerpLibrary.easeFunction = EasingType.Quart;
+    //}
+    //public void SetEasingOptionExpo() {
+    //    lerpLibrary.easeFunction = EasingType.Expo;
+    //}
+    //public void SetEasingOptionBack() {
+    //    lerpLibrary.easeFunction = EasingType.Back;
+    //}
+    //public void SetEasingOptionBounce() {
+    //    lerpLibrary.easeFunction = EasingType.Bounce;
+    //}
 }
