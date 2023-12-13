@@ -24,12 +24,10 @@ public class ButtonRunLerp : MonoBehaviour, IInteract {
 
             }
             if(rotateObject) {
-                StartCoroutine(lerpLibrary.Vector3LerpEasing(ObjectToMove.transform, ObjectToMove.transform.eulerAngles, TargetPosition.eulerAngles, PropertyToChange.Rotation, easingType, easingAccent, true));
-
+                StartCoroutine(lerpLibrary.QuaternionLerpEasing(ObjectToMove.transform, ObjectToMove.transform.rotation, TargetPosition.rotation, easingType, easingAccent, true));
             }
             if(scaleObject) {
                 StartCoroutine(lerpLibrary.Vector3LerpEasing(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale, PropertyToChange.Scale, easingType, easingAccent, true));
-
             }
         }
     }
