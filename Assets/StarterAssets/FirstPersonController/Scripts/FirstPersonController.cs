@@ -266,15 +266,18 @@ namespace StarterAssets
 		}
 
 		void OnFire() {
-            Debug.DrawLine(_mainCamera.transform.position, _mainCamera.transform.position + (_mainCamera.transform.forward * 10), Color.red, 10f);
-			RaycastHit[] hits = Physics.RaycastAll(_mainCamera.transform.position, _mainCamera.transform.forward, 10, LayerMask.GetMask("Interactable"));
-			if(hits.Length > 0) {
-				Debug.Log("hits aren't null");
-				foreach(RaycastHit hit in hits) {
-					IInteract target = hit.transform.GetComponent<IInteract>();
-					target.Interact();
-				}
-			}
+			if(this.enabled) {
+                Debug.DrawLine(_mainCamera.transform.position, _mainCamera.transform.position + (_mainCamera.transform.forward * 10), Color.red, 10f);
+                RaycastHit[] hits = Physics.RaycastAll(_mainCamera.transform.position, _mainCamera.transform.forward, 10, LayerMask.GetMask("Interactable"));
+                if(hits.Length > 0) {
+                    Debug.Log("hits aren't null");
+                    foreach(RaycastHit hit in hits) {
+                        IInteract target = hit.transform.GetComponent<IInteract>();
+                        target.Interact();
+                    }
+                }
+            }
+            
 		}
 	}
 }

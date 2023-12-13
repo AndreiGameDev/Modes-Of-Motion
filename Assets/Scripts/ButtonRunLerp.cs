@@ -6,7 +6,7 @@ public class ButtonRunLerp : MonoBehaviour, IInteract {
     [SerializeField] GameObject ObjectToMove;
     [SerializeField] Transform TargetPosition;
     [SerializeField] EasingType easingType;
-    [SerializeField] EasingAccents easingAccent;
+    public EasingAccents easingAccent;
     public bool moveObject;
     public bool rotateObject;
     public bool scaleObject;

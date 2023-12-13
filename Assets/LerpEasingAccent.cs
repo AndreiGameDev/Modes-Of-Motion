@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class LerpEasingAccent : MonoBehaviour
 {
-    //public GameObject target;
-    //AdvancedLerpLibrary lerpLibrary;
-    //private void OnEnable() {
-    //    lerpLibrary = target.GetComponent<AdvancedLerpLibrary>();
-    //}
+    public ButtonRunLerp buttonLerp;
 
-    //public void SetEasingAccentIn() {
-    //    lerpLibrary.easingAccent = EasingAccents.easeIn;
-    //}
+    public void SetEasingAccentIn() {
+        buttonLerp.easingAccent = EasingAccents.easeIn;
+    }
 
-    //public void SetEasingAccentOut() {
-    //    lerpLibrary.easingAccent = EasingAccents.easeOut;
-    //}
-    //public void SetEasingAccentInOut() {
-    //    lerpLibrary.easingAccent = EasingAccents.easeInOut;
-    //}
+    public void SetEasingAccentOut() {
+        buttonLerp.easingAccent = EasingAccents.easeOut;
+    }
+    public void SetEasingAccentInOut() {
+        buttonLerp.easingAccent = EasingAccents.easeInOut;
+    }
 }

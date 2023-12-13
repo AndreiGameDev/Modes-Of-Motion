@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LerpEasingOptions : MonoBehaviour
 {
+    //public GameObject target;
     //AdvancedLerpLibrary lerpLibrary;
     //private void Start() {
     //    lerpLibrary = GetComponent<AdvancedLerpLibrary>();
