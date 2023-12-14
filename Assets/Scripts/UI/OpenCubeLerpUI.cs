@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenUIButton : MonoBehaviour, IInteract
+public class OpenCubeLerpUI : MonoBehaviour, IInteract
 {
     [SerializeField] GameObject CanvasToOpen;
     [SerializeField]LerpEasingAccent easingAccentUI;
@@ -22,7 +22,5 @@ public class OpenUIButton : MonoBehaviour, IInteract
             easingAccentUI.buttonLerp = buttonLerp;
             CanvasToOpen.SetActive(true);
         }
-
-
     }
 }
