@@ -20,14 +20,14 @@ public class ButtonRunLerp : MonoBehaviour, IInteract {
         if(!isRunning) {
             StartCoroutine(Lerping());
             if(moveObject) {
-                StartCoroutine(lerpLibrary.WorldVector3LerpEasing(ObjectToMove.transform, ObjectToMove.transform.position, TargetPosition.position, PropertyToChange.Position, easingType, easingAccent, 1f, true));
+                StartCoroutine(lerpLibrary.LerpWorldPosition(ObjectToMove.transform, ObjectToMove.transform.position, TargetPosition.position,easingType, easingAccent, 1f, true));
 
             }
             if(rotateObject) {
                 StartCoroutine(lerpLibrary.QuaternionLerpEasing(ObjectToMove.transform, ObjectToMove.transform.rotation, TargetPosition.rotation, easingType, easingAccent, true));
             }
             if(scaleObject) {
-                StartCoroutine(lerpLibrary.WorldVector3LerpEasing(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale, PropertyToChange.Scale, easingType, easingAccent, 1f, true));
+                StartCoroutine(lerpLibrary.LerpLocalScale(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale,easingType, easingAccent, 1f, true));
             }
         }
     }

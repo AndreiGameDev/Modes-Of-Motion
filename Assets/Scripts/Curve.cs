@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LerpType
+public class Curve
 {
     Vector3 Lerp(Vector3 a_A, Vector3 a_B, float a_t) {
         return a_t * a_B + (1 - a_t) * a_A;
     }
-
     public Vector3 QuadBezier(Vector3 a_A, Vector3 a_B, Vector3 a_C, float a_t) {
         //lerp from the first point to the second
         Vector3 mid1 = Lerp(a_A, a_B, a_t);

@@ -38,12 +38,12 @@ public class CameraShaker : MonoBehaviour, IInteract {
             //transform.localPosition = new Vector3(x, originalPos.y, originalPos.z);
             Vector3 NewPosition = new Vector3(cameraHolder.localPosition.x + x, cameraHolder.localPosition.y, cameraHolder.localPosition.z);
             Debug.Log(frameSpeed);
-            StartCoroutine(lerpLibrary.LocalVector3LerpEasing(cameraHolder, cameraHolder.localPosition, NewPosition, PropertyToChange.Position, easingType, easingAccent, duration * Time.deltaTime, false));
+            StartCoroutine(lerpLibrary.LerpLocalPosition(cameraHolder, cameraHolder.localPosition, NewPosition, easingType, easingAccent, duration * Time.deltaTime, false));
             elapsed += Time.deltaTime;
             
             yield return null;
         }
-        StartCoroutine(lerpLibrary.LocalVector3LerpEasing(cameraHolder, cameraHolder.localPosition, originalPos, PropertyToChange.Position, easingType, easingAccent, duration * Time.deltaTime, false));
+        StartCoroutine(lerpLibrary.LerpLocalPosition(cameraHolder, cameraHolder.localPosition, originalPos, easingType, easingAccent, duration * Time.deltaTime, false));
         //transform.localPosition = originalPos;
     }
 
