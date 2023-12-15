@@ -50,6 +50,21 @@ public class Curve
         Vector3 point = h00 * point0 + h10 * tangent0 + h01 * point1 + h11 * tangent1;
         return point;
     }
+    
+    public Vector3 CatmullRomSpline(Vector3 point0, Vector3 point1, Vector3 point2, float t) {
+        Vector3 tangent0 = (point1 - point0) * .5f;
+        Vector3 tangent1 = (point2 - point1) * .5f;
 
+        float tsq = t * t;
+        float tcub = tsq * t;
+
+        float h00 = 2 * tcub - 3 * tsq + 1;
+        float h01 = -2 * tcub + 3 * tsq;
+        float h10 = tcub - 2 * tsq + t;
+        float h11 = tcub - tsq;
+
+        Vector3 point = h00 * point0 + h10 * tangent0 + h01 * point1 + h11 * tangent1;
+        return point;
+    }
 
 }
