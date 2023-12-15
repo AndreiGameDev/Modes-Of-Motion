@@ -24,7 +24,7 @@ public class ButtonRunLerp : MonoBehaviour, IInteract {
 
             }
             if(rotateObject) {
-                StartCoroutine(lerpLibrary.QuaternionLerpEasing(ObjectToMove.transform, ObjectToMove.transform.rotation, TargetPosition.rotation, easingType, easingAccent, true));
+                StartCoroutine(lerpLibrary.QuaternionLerpEasing(ObjectToMove.transform, ObjectToMove.transform.rotation, TargetPosition.rotation, easingType, easingAccent, 1f, true));
             }
             if(scaleObject) {
                 StartCoroutine(lerpLibrary.LerpLocalScale(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale,easingType, easingAccent, 1f, true));

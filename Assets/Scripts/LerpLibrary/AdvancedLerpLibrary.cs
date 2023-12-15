@@ -283,7 +283,7 @@ public class AdvancedLerpLibrary : MonoBehaviour {
         float time = 0;
         while(time < duration) {
             targetTransform.position = LerpVectorEasing(startVector, endVector, time, easingType, easingAccent);
-            time += Time.deltaTime;
+            time += Time.deltaTime / duration;
             yield return null;
         }
         if(ResetToStartAfterDone == true) {
@@ -292,11 +292,11 @@ public class AdvancedLerpLibrary : MonoBehaviour {
         }
     }
 
-    public IEnumerator LerpLocalPosition(Transform targetTransform, Vector3 startVector, Vector3 endVector, EasingType easingType, EasingAccents easingAccent, float duration = 1f, bool ResetToStartAfterDone = false) {
+    public IEnumerator LerpLocalPosition(Transform targetTransform, Vector3 startVector, Vector3 endVector, EasingType easingType, EasingAccents easingAccent, float duration, bool ResetToStartAfterDone = false) {
         float time = 0;
-        while(time < duration) {
+        while(time < 1) {
             targetTransform.localPosition = LerpVectorEasing(startVector, endVector, time, easingType, easingAccent);
-            time += Time.deltaTime;
+            time += Time.deltaTime / duration;
             yield return null;
         }
         if(ResetToStartAfterDone == true) {
@@ -309,7 +309,7 @@ public class AdvancedLerpLibrary : MonoBehaviour {
         float time = 0;
         while(time < duration) {
             targetTransform.localScale = LerpVectorEasing(startVector, endVector, time, easingType, easingAccent);
-            time += Time.deltaTime;
+            time += Time.deltaTime / duration;
             yield return null;
         }
         if(ResetToStartAfterDone == true) {
@@ -317,11 +317,11 @@ public class AdvancedLerpLibrary : MonoBehaviour {
             targetTransform.localScale = startVector;
         }
     }
-    public IEnumerator QuaternionLerpEasing(Transform targetTransform, Quaternion startQuaternion, Quaternion endQuaternion, EasingType easingType, EasingAccents easingAccent, bool ResetToStartAfterDone = false) {
+    public IEnumerator QuaternionLerpEasing(Transform targetTransform, Quaternion startQuaternion, Quaternion endQuaternion, EasingType easingType, EasingAccents easingAccent, float duration = 1f, bool ResetToStartAfterDone = false) {
         float time = 0;
         while(time < 1) {
             targetTransform.rotation = LerpQuaternionEasing(startQuaternion, endQuaternion, time, easingType, easingAccent);
-            time += Time.deltaTime;
+            time += Time.deltaTime / duration;
             yield return null;
         }
         if(ResetToStartAfterDone == true) {
