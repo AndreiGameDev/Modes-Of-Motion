@@ -8,9 +8,6 @@ public class Easing {
     public static float Linear(float t) {
         return t;
     }
-
-    
-
     public class  Sines
     {
         public static float In(float t) {
@@ -106,17 +103,7 @@ public class Easing {
             if ((t *= 2f) < 1f) return 0.5f * t * t;
             return -0.5f * ((t -= 1f) * (t - 2f) - 1f);
         }
-        public static float InOut(float t, bool b) {
-            if (b) {
-                return Mathf.PingPong(InOut(t), 0.5f);
-            } else {
-                return InOut(t);
-            }
-        }
-        public static float Bezier(float t, float c) {
-            return c * 2 * t * (1 - t) + t * t;
-        }
-    };
+    }
     public class Quart {
         public static float In(float t) {
             return t * t * t * t;

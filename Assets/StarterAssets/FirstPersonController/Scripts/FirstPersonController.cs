@@ -112,6 +112,10 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			//Quits Application
+			if(Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
+			}
 			JumpAndGravity();
 			GroundedCheck();
 			Move();

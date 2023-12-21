@@ -11,6 +11,7 @@ public class UIToggleScript : MonoBehaviour
         fpsController = FindObjectOfType<FirstPersonController>();
     }
 
+    // Toggles player mode back to on
     public void TogglePlayerMode() {
         fpsController.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

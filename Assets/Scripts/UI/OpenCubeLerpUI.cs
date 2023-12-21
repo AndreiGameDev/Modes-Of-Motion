@@ -13,6 +13,8 @@ public class OpenCubeLerpUI : MonoBehaviour, IInteract
     private void Start() {
         fpsController = FindObjectOfType<FirstPersonController>();
     }
+
+    // Opens UI and disabled player controlls and shows cursor
     public void Interact() {
         fpsController.enabled = false;
         Cursor.visible = true;

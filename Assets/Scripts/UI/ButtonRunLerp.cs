@@ -16,18 +16,19 @@ public class ButtonRunLerp : MonoBehaviour, IInteract {
         lerpLibrary = AdvancedLerpLibrary.Instance;
     }
 
+    // Lerps the object to the target's position using our lerp library.
     public void Interact() {
         if(!isRunning) {
             StartCoroutine(Lerping());
             if(moveObject) {
-                StartCoroutine(lerpLibrary.LerpWorldPosition(ObjectToMove.transform, ObjectToMove.transform.position, TargetPosition.position,easingType, easingAccent, 1f, true));
+                StartCoroutine(lerpLibrary.LerpWorldPositionEasing(ObjectToMove.transform, ObjectToMove.transform.position, TargetPosition.position,easingType, easingAccent, 1f, true));
 
             }
             if(rotateObject) {
                 StartCoroutine(lerpLibrary.QuaternionLerpEasing(ObjectToMove.transform, ObjectToMove.transform.rotation, TargetPosition.rotation, easingType, easingAccent, 1f, true));
             }
             if(scaleObject) {
-                StartCoroutine(lerpLibrary.LerpLocalScale(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale,easingType, easingAccent, 1f, true));
+                StartCoroutine(lerpLibrary.LerpLocalScaleEasing(ObjectToMove.transform, ObjectToMove.transform.localScale, TargetPosition.localScale,easingType, easingAccent, 1f, true));
             }
         }
     }
