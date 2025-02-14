@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LerpLibrary.unity
+    guid: de2a353cc7d929f4c98103fcb9c069b4
   m_configObjects: {}
