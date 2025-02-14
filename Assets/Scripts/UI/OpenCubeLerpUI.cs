@@ -20,8 +20,10 @@ public class OpenCubeLerpUI : MonoBehaviour, IInteract
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         if (CanvasToOpen != null) {
-            transformLockUI.buttonLerp = buttonLerp;
-            easingAccentUI.buttonLerp = buttonLerp;
+            if(transformLockUI != null && easingAccentUI != null) {
+                transformLockUI.buttonLerp = buttonLerp;
+                easingAccentUI.buttonLerp = buttonLerp;
+            }
             CanvasToOpen.SetActive(true);
         }
     }

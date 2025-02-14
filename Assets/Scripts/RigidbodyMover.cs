@@ -14,6 +14,7 @@ public class RigidbodyMover : MonoBehaviour, IInteract
     Rigidbody targetRb3;
     public float force = 10f;
     [SerializeField] bool canUse = true;
+
     private void Start() {
         targetRb = target.GetComponent<Rigidbody>();
         targetRb1 = target1.GetComponent<Rigidbody>();
@@ -64,5 +65,9 @@ public class RigidbodyMover : MonoBehaviour, IInteract
         target3.transform.position = targetInitialPos3;
         target3.transform.rotation = originalRot3;
         canUse = true;
+    }
+
+    public void ChangeForceUI(float newForce) {
+        force = newForce;
     }
 }
